@@ -1,0 +1,150 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/background-blurs.png") center no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    width: 470px;
+    height: 450px;
+    background: rgba(122, 122, 122, 0.16);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+}
+
+.gameArea{
+    width: 230px;
+    height: 410px;
+    background: var(--background-c);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 4px;
+    padding: 10px;
+    position: relative;
+}
+
+.cell{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.snake{
+    background: #ffffff;
+    box-shadow: 0 0 12px rgba(255,255,255,0.7);
+    border-radius: 0;
+}
+
+.food{
+    background: #ff4d4d;
+    box-shadow: 0 0 12px rgba(255,77,77,0.8);
+    border-radius: 0;
+}
+
+.snakeHeadUp{
+    border-radius: 10px 10px 0 0;
+}
+
+.snakeHeadDown{
+    border-radius: 0 0 10px 10px;
+}
+
+.snakeHeadLeft{
+    border-radius: 10px 0 0 10px;
+}
+
+.snakeHeadRight{
+    border-radius: 0 10px 10px 0;
+}
+
+.InstructionsTopContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    /*height: 450px;*/
+}
+
+.InstructionsMainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.instructions{
+    background: var(--background-c);
+    width: 180px;
+    height: 160px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.keysMainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keysContainer{
+    display: flex;
+    align-items: center;
+    width: 130px;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+}
+
+.FoodsContainer{
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 10px;
+}
+
+.overlay{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+}
+
+.playButton{
+    background: #fdb769;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    &&:hover{
+        scale: 0.95;
+    }
+
+    &&:active{
+        scale: 1;
+    }
+}

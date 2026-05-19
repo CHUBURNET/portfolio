@@ -1,0 +1,24 @@
+.container{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.container a{
+    padding: 10px;
+    border: 1px solid #35435a;
+    height: 52px;
+}
+
+.github{
+    width: 150px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
