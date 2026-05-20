@@ -3,17 +3,21 @@ import {Routes, Route} from 'react-router-dom';
 import HomePage from "./components/pages/HomePage.tsx";
 import Header from "./components/modules/Header.tsx";
 import Footer from "./components/modules/Footer.tsx";
+import AboutPage from "./components/pages/AboutPage.tsx";
 
 const App: React.FC = () => {
     return (
-        <>
+        <div className={"appWrapper"}>
             <Header />
-            <Routes>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="*" element={<HomePage/>}/>
-            </Routes>
+            <main className="mainContent">
+                <Routes>
+                    <Route path="/" element={<HomePage/>}/>
+                    <Route path="/about" element={<AboutPage/>}/>
+                    <Route path="*" element={<HomePage/>}/>
+                </Routes>
+            </main>
             <Footer />
-        </>
+        </div>
     );
 };
 

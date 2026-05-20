@@ -1,0 +1,149 @@
+.container{
+    animation: appearance 1s forwards;
+    height: calc(100vh - 96px);
+    display: flex;
+    max-width: 100%;
+}
+
+.AboutNavigation{
+    /*width: 25%;*/
+    min-width: 370px;
+    width: 394px;
+    height: 100%;
+}
+
+.TreeContainer{
+    min-height: 317px;
+    padding: 10px 20px;
+    height: calc(55vh - 93px);
+    border: 1px solid var(--border-c);
+}
+
+.fileRow{
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fileName{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    height: calc(50vh - 96px);
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.contact svg{
+    min-width: 15px;
+}
+
+.content{
+    width: 100%;
+
+}
+
+.contentHeader{
+    /*overflow-x: auto;*/
+    /*overflow-y: hidden;*/
+    display: flex;
+    width: 100%;
+    background-color: var(--background-c);
+}
+
+.tab{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*width: calc(100% / 3);*/
+    padding: 20px;
+    border: 1px solid var(--border-c);
+    transition: width 0.1s ease;
+    min-width: 137px;
+    flex-shrink: 0; /* ВОТ ЭТО НУЖНО */
+}
+
+.tab span{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+}
+
+.contentText{
+    overflow-y: auto !important;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-size: 18px;
+    /*white-space: pre-wrap;*/
+    /*word-break: break-all;*/
+    padding: 0 20px;
+    height: calc(100vh - 96px - 22px);
+    background: var(--background-c);
+}
+
+body{
+    overflow-y: hidden;
+}
+
+@keyframes appearance {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@media (max-width: 1035px) {
+    .contentText{
+        width: 100%;
+    }
+}
+
+@media (max-width: 974px) {
+    body{
+        overflow-y: auto;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .contentText{
+        margin: 0;
+        height: 100vh;
+        overflow: auto;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 865px) {
+    .AboutNavigation{
+        width: 100%;
+    }
+}
+
+@media (max-width: 813px) {
+    .container{
+        padding-top: 43px;
+    }
+}
+/*@media (max-height: 317px) {*/
+/*    .TreeContainer{*/
+/*        height: auto;*/
+/*    }*/
+/*}*/

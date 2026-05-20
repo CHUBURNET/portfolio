@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.triangle{
+    transition: rotate 0.1s ease-in-out;
+}
+
+.body{
+    margin-left: 20px;
+    animation: appearance 0.1s forwards;
+}
+
+.name{
+    transition: color 0.1s ease-in-out;
+}
+
+@keyframes appearance {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}

@@ -6,7 +6,7 @@
     text-align: center;
     padding: 10px 20px;
     min-width: 150px;
-    border: 1px solid #35435a;
+    border: 1px solid var(--border-c);
     outline: none;
     border-collapse: collapse;
     /*transition: display 1s ease;*/
@@ -19,7 +19,7 @@
 .me{
     padding: 10px 20px;
     min-width: 160px;
-    border: 1px solid #35435a;
+    border: 1px solid var(--border-c);
     outline: none;
     border-collapse: collapse;
     width: 400px;
@@ -28,7 +28,7 @@
 
 .empty{
     width: 100%;
-    border: 1px solid #35435a;
+    border: 1px solid var(--border-c);
 }
 
 .burger button{
@@ -44,7 +44,7 @@
 
 .burgerMess{
     display: none;
-    border: 1px solid #35435a;
+    border: 1px solid var(--border-c);
     padding: 10px 20px;
 }
 

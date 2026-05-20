@@ -45,7 +45,7 @@ const SnakeGame: React.FC = () => {
     const [gameOver, setGameOver] = useState(false);
 
     const directionRef = useRef(direction);
-    const navgate = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         directionRef.current = direction;
@@ -74,7 +74,7 @@ const SnakeGame: React.FC = () => {
     };
 
     const onAllFoodCollected = useCallback(() => {
-        alert("Вся еда собрана");
+        navigate("/about")
     }, []);
 
 
@@ -333,7 +333,7 @@ const SnakeGame: React.FC = () => {
                         <button
                             style={{width: "100%"}}
                             className={style.playButton}
-                            onClick={() => navgate("/about")}
+                            onClick={() => navigate("/about")}
                         >Пропустить</button>
                     </div>
                 </div>

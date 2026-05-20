@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             {findMe.map((item) =>
                 <a target={"_blank"} key={item.name} title={item.name} href={item.url}>{item.logo}</a>
             )}
-            <div style={{outline: "1px solid #35435a", height: "50px", width: "100%"}} />
+            <div style={{outline: "1px solid var(--border-c)", height: "50px", width: "100%"}} />
             <a className={style.github} target={"_blank"} href={"https://github.com/CHUBURNET"}>
                 <span>@CHUBURNET</span>
                 <svg width="30" height="30" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -2,15 +2,17 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: start;
+    background: var(--background-c);
+    z-index: 1;
 }
 
 .container a{
     padding: 10px;
-    border: 1px solid #35435a;
+    border: 1px solid var(--border-c);
     height: 52px;
 }
 

@@ -57,7 +57,7 @@ const Header:React.FC = () => {
                         onClick={() => setIsBurgerOpen(false)}
                         key={route.name}
                         to={route.path}
-                        style={{borderBottom: `${route.path === pathname ? "2px solid #fdb769" : "1px solid #35435a"}`}}
+                        style={{borderBottom: `${route.path === pathname ? "2px solid #fdb769" : "1px solid var(--border-c)"}`}}
                     >{route.name}</Link>
                 )}
                 <div className={style.empty}></div>
