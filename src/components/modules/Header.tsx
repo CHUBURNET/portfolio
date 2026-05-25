@@ -52,7 +52,7 @@ const Header:React.FC = () => {
                     </div>
                 </div>
                 <div style={{display: isBurgerOpen ? "block" : "none"}} className={style.burgerMess}># навигация:</div>
-                {(screenWidth >= 813 || isBurgerOpen) && routes.map((route) =>
+                {(screenWidth >= 813 || isBurgerOpen) && routes.map((route): React.ReactNode =>
                     <Link
                         onClick={() => setIsBurgerOpen(false)}
                         key={route.name}

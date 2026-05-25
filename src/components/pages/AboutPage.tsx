@@ -5,20 +5,27 @@ import type {ITriangleIcon} from "../../types/ITriangleIcon.ts";
 import {myInfo} from "../../utils/constants/aboutMe.tsx";
 import type {IFile, IFileState, IMyInfo} from "../../types/IMyInfo.ts";
 
-const TriangleIcon: React.FC<ITriangleIcon> = ({style, className, fill}) => <svg style={style} className={className} width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+const TriangleIcon: React.FC<ITriangleIcon> = ({style, className, fill}: ITriangleIcon): React.ReactNode => <svg style={style} className={className} width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4 4L0 8V0L4 4Z" fill={fill}/>
 </svg>
 
-const AboutPage: React.FC = () => {
-    const [openedFiles, setOpenedFiles] = useState<IFileState[]>([])
+const AboutPage: React.FC = (): React.ReactNode => {
+    const [openedFiles, setOpenedFiles] = useState<IFileState[]>([
+        {
+            id: "0",
+            isActive: true,
+            fileName: "Общая информация",
+            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi asperiores assumenda, blanditiis consectetur consequatur cum cupiditate delectus dicta doloremque eos eveniet impedit inventore maiores modi nulla ratione rerum sequi, tempora totam ullam unde velit veniam veritatis vitae. Id iusto magnam nesciunt quaerat rem. Aliquid harum inventore perferendis provident quaerat.",
+        }
+    ])
 
-    function openFile(file: IFile) {
-        setOpenedFiles(prev => {
-            const filtered = prev.filter(item => item.fileName !== file.fileName)
+    function openFile(file: IFile): void {
+        setOpenedFiles((prev: IFileState[]): IFileState[] => {
+            const filtered: IFileState[] = prev.filter((item: IFileState): boolean => item.fileName !== file.fileName)
             if (filtered.length > 2) {
                 filtered.pop()
             }
-            filtered.forEach((item: IFileState) => {
+            filtered.forEach((item: IFileState): void => {
                 item.isActive = false
             })
             return [
@@ -32,26 +39,24 @@ const AboutPage: React.FC = () => {
         })
     }
 
-    function closeFile(file: IFile) {
-        setOpenedFiles(prev => {
-            const filtered = prev.filter(item => item.fileName !== file.fileName);
+    function closeFile(file: IFile): void {
+        setOpenedFiles((prev: IFileState[]): IFileState[] => {
+            const filtered: IFileState[] = prev.filter((item: IFileState): boolean => item.fileName !== file.fileName);
             if (filtered.length === 0) {
                 return [];
             }
 
-            const wasActive = prev.find(item => item.fileName === file.fileName)?.isActive;
-            const updatedFiles = filtered.map((item, index) => {
+            const wasActive: boolean | undefined = prev.find((item: IFileState): boolean => item.fileName === file.fileName)?.isActive;
+            return filtered.map((item: IFileState, index: number): IFileState => {
                 return {
                     ...item,
                     isActive: wasActive ? index === 0 : item.isActive
                 };
             });
-
-            return updatedFiles;
         });
     }
 
-    useEffect(() => {
+    useEffect((): void => {
         console.log(openedFiles)
     }, [openedFiles]);
 
@@ -65,14 +70,15 @@ const AboutPage: React.FC = () => {
                         Triangle={TriangleIcon}
                     >
                         <div style={{display: "flex", flexDirection: "column",  gap: "10px", marginTop: "10px"}}>
-                            {myInfo.map((item: IMyInfo) =>
+                            {myInfo.map((item: IMyInfo): React.ReactNode =>
                                 <TreeMenu
                                     key={item.name}
+                                    isDefaultOpen={true}
                                     // Triangle={TriangleIcon}
                                     Name={<div>{item.folderIcon} <span>{item.name}</span></div>}
                                 >
-                                    {item.files.map((file: IFile) =>
-                                        <div onClick={() => openFile(file)} title={file.fileName} className={style.fileRow} key={file.fileName}>
+                                    {item.files.map((file: IFile): React.ReactNode =>
+                                        <div onClick={(): void => openFile(file)} title={file.fileName} className={style.fileRow} key={file.fileName}>
                                             <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M0.666667 0H12.6667C13.0349 0 13.3333 0.29848 13.3333 0.666667V11.3333C13.3333 11.7015 13.0349 12 12.6667 12H0.666667C0.29848 12 0 11.7015 0 11.3333V0.666667C0 0.29848 0.29848 0 0.666667 0ZM3.33333 8.33333V5.66667L4.66667 7L6 5.66667V8.33333H7.33333V3.66667H6L4.66667 5L3.33333 3.66667H2V8.33333H3.33333ZM10.6667 6.33333V3.66667H9.33333V6.33333H8L10 8.33333L12 6.33333H10.6667Z" fill="#62748E"/>
                                             </svg>
@@ -108,7 +114,7 @@ const AboutPage: React.FC = () => {
             </div>
             <div className={style.content}>
                 <div className={style.contentHeader}>
-                    {openedFiles.map((file: IFileState) =>
+                    {openedFiles.map((file: IFileState): React.ReactNode =>
                         <div key={file.id} style={{width: `calc(100% / ${openedFiles.length})`}} className={style.tab}>
                             <span>{file.fileName}</span>
                             <button style={{ cursor: 'pointer', position: 'relative', zIndex: 3 }} onClick={() => closeFile(file)}>
@@ -120,7 +126,7 @@ const AboutPage: React.FC = () => {
                     )}
                 </div>
                 <div>
-                    {openedFiles.map((file: IFileState) =>
+                    {openedFiles.map((file: IFileState): React.ReactNode =>
                         <React.Fragment key={file.id}>
                             {file.isActive &&
                                 <p id={"info"} className={style.contentText}>

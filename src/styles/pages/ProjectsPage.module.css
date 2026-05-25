@@ -1,0 +1,95 @@
+body{
+    overflow-y: hidden;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.tagsContainer{
+    border: 1px solid var(--border-c);
+    width: 14.35%;
+    height: 100vh;
+    min-width: 225px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    /*align-items: center;*/
+
+}
+
+.tag{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tagName{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.tagName svg{
+    width: 21px;
+}
+
+.tag input[type="checkbox"]{
+    accent-color: var(--text-c);
+    color: var(--background-c);
+}
+
+.projectsContainer{
+    height: 100vh;
+    padding: 10px 10px 100px 10px;
+    border: 1px solid var(--border-c);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
+
+.project{
+    border: 1px solid var(--border-c);
+    width: 100%;
+    height: 30vh;
+    /*height: 300px;*/
+    position: relative;
+
+    && img{
+        width: 100%;
+        height: 100%;
+
+    }
+}
+
+.info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--border-c);
+    color: var(--text-c);
+    padding: 15px;
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btns button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.deployBtn{
+    background: #fdb769 !important;
+    padding: 10px;
+    border-radius: 8px;
+}

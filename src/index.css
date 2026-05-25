@@ -3,12 +3,13 @@
 :root {
     --background-c: #0f172b;
     --text-c: #8fa0b8;
-    --border-c: #35435a;
+    --border-c: #242d3d;
     --text0-console-c: #7d8db3;
     --text1-console-c: #605efd;
     --text2-console-c: #00d3bd;
     --text3-console-c: #de8e9b;
 }
+/*8fa0b8*/
 
 *{
     box-sizing: border-box;

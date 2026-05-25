@@ -320,12 +320,12 @@ const SnakeGame: React.FC = () => {
                             <span>// еды осталось</span>
 
                             <div className={style.FoodsContainer}>
-                                {collectedFoods.map((food, idx) => (
+                                {collectedFoods.map((food, idx): React.ReactNode =>
                                     <Food
                                         key={idx}
                                         active={food}
                                     />
-                                ))}
+                                )}
                             </div>
                         </div>
                     </div>

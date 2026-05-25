@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer className={style.container}>
-            {findMe.map((item) =>
+            {findMe.map((item): React.ReactNode =>
                 <a target={"_blank"} key={item.name} title={item.name} href={item.url}>{item.logo}</a>
             )}
             <div style={{outline: "1px solid var(--border-c)", height: "50px", width: "100%"}} />
